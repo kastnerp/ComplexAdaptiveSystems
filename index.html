@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+
+	<title>Complex Adaptive Systems (CAS)</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+	<script src="sketch.js"></script>
+	<script src="boid.js"></script>
+	<script src="solution.js"></script>
+</head>
+
+<body class="landing">
+
+	<!-- Header -->
+	<header id="header" class="alt"></header>
+
+
+
+	<!-- Banner -->
+	<section id="banner">
+		<h2>Complex Adaptive Systems</h2>
+		<p>How the following of simple rules can lead to emergent behaviour</p>
+
+	</section>
+
+
+
+
+
+
+	<section id="main" class="wrapper">
+		<div class="container 75%">
+
+
+			<header class="major">
+				<h2>The common misconception</h2>
+				<p>Our mental model about CAS in nature was wrong</p>
+			</header>
+
+
+
+
+
+
+
+			<p><span>Many people are enamored by the flocking behavior of animals like fish or birds. However, it is a common misconception that such flocks are led by a leader fish or bird that orchestrate the flock
+					(Potts, 1984). In this short interactive lesson, we will discover that no such leader exists.
+					Flocks,		herds, or schools, in fact, are the result of emergent behavior that often occurs when the
+					individual animals follow simple rules.</span></p>
+			<p><span>As the headline suggests, this lesson utilizes the flocking behavior of animals to introduce the
+					concept of complex adaptive systems (CAS). Before we begin, let&#39;s ask Wikipedia what CASs
+					are:</span></p>
+			<blockquote>
+				<p>A complex adaptive system is a system in which a <b> perfect understanding of the individual
+						parts</b> does
+					<b>not</b> automatically convey a<b> perfect understanding
+						of the whole</b> system&#39;s behavior. In complex adaptive systems, the <b> whole is
+						more complex than its parts </b> , and more complicated and meaningful than the aggregate of its
+					parts. (<a href='https://en.wikipedia.org/wiki/Complex_adaptive_system'>Wikipedia</a>)
+			</blockquote>
+
+
+			<p><span>From Wikipedia, we learn that CASs are comprised of simple parts that form a larger whole. We also
+					learn that a very basic interaction may lead to a complex outcome when done as a collective.
+					Specifically, in CASs, the simple parts usually are  local agents that follow simple rules. In other words, a set of simple behaviors followed by a
+					collective may lead to an emergent outcome.</span></p>
+
+
+
+
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+	<section id="main" class="wrapper style2">
+		<div class="container 75%">
+
+
+			<header class="major">
+				<h2>CAS in
+					Nature</h2>
+				<p>How agent-based models can help us simulate emergent behavior</p>
+			</header>
+
+
+
+
+
+			<p><span>It turns out that we are able to simulate such behavior with an approach called agent-based
+					modeling
+					(ABM). In ABM, a collection of individual agents obeying simple rules is modeled as a system that
+					evolves over time. With every timestep, each agent acts upon the rules it obeys constrained by its
+					immediate surroundings.</span></p>
+			<p><span>In the late 1980s, Craig Reynolds introduced an algorithm that he called the </span><em><span>Boids
+						Algorithm</span></em><span> that is based on the ABM approach (Reynolds, 1987). His algorithm
+					proposes to model the individuals agents as so-called boids, that possess a certain field of visions
+					within which they are able to respond to their surroundings and follow simple rules. Hence, the
+					agents&#39; individual perspective is local, they are not aware that they are part of a global
+					system,
+					neither are they aware of all of their neighbors. </span></p>
+			<p><span>When translating the concept of CAS to nature, we can imagine that different CASs have
+					individual
+					characteristics, depending of whether we think of schools of fish, insects, or flocks of birds.
+					Let&#39;s explore a set of possible characteristics in the interactive simulations below.</span></p>
+
+
+
+		</div>
+
+	</section>
+
+
+
+	<section id="main" class="wrapper style1">
+		<div class="container 75%">
+
+			<header class="major special">
+				<h2>Rules</h2>
+				<p>The three  rules for the agents to follow are simple</p>
+			</header>
+
+
+The agents or boids in our simulation will start moving from a random location starting from the center of a canvas. While doing that, they will follow three rules with respect to their neighbors in their local vicinity. Their local vicinitry is given by a radius that we call field of vision.
+
+<p>&nbsp;</p>
+
+			<!-- One -->
+
+			<div class="container 75%">
+				<div class="row 200%">
+					<div class="5u 12u$(medium)">
+						<header class="major">
+
+							<div class="image"><img src="images/boids_Cohesion.svg" alt="" width="300"/>
+							</div>
+						</header>
+					</div>
+					<div class="5u$ 12u$(medium)">
+						<p>&nbsp;</p>
+						<h2>Cohesion</h2>
+						<p>If agents are within the field of perception, steer towards the center of all neighbors.</p>
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<!-- One -->
+
+		
+				<div class="container 75%">
+					<div class="row 200%">
+						<div class="5u 12u$(medium)">
+							<header class="major">
+
+								<div class="image"><img src="images/boids_Separation.svg" alt="" width="300" />
+								</div>
+							</header>
+						</div>
+						<div class="5u$ 12u$(medium)">
+
+							<p>&nbsp;</p>
+							<h2>Separation</h2>
+							<p>Agents that are too close to each other will try to maintain a safe distance from each other.</p>
+
+
+
+						</div>
+					</div>
+				</div>
+
+		
+			<!-- One -->
+
+			<div class="container 75%">
+				<div class="row 200%">
+					<div class="5u 12u$(medium)">
+						<header class="major">
+
+							<div class="image"><img src="images/boids_Alignment.svg" alt="" width="300" />
+							</div>
+
+						</header>
+
+
+					</div>
+					<div class="5u$ 12u$(medium)">
+						<p>&nbsp;</p>
+						<h2>Alignment</h2>
+						<p>If agents approach each other within their field of vision, they will align their trajectories.</p>
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+	<section id="main" class="wrapper style2">
+		<div class="container 75%">
+
+
+			<header class="major">
+				<h2>Interrogating the rules</h2>
+				<p>Dissecting the model into its constituent parts builds intuition</p>
+			</header>
+
+
+
+
+
+
+
+			<h2><a name="cohesion" class="md-header-anchor"></a><span>Cohesion</span></h2>
+			<p><span>Under this rule, boids are steering toward the center of mass of all boids in their vicinity.
+					However,
+					that merely leads to one or possibly several individual clusters of boids across the canvas.</span></p>
+
+
+
+			<div id="sketch-holder-2">
+				<!-- Our sketch will go here! -->
+
+			</div>
+			<p>&nbsp;</p>
+
+
+			<h2><a name="separation" class="md-header-anchor"></a><span>Separation</span></h2>
+			<p><span>Under this rule, the boids will avoid each other and try to keep a safe distance. As a result, we
+					merely see dispersed boids across the canvas.</span></p>
+
+
+
+
+
+			<div id="sketch-holder-3">
+				<!-- Our sketch will go here! -->
+
+			</div>
+
+			<p>&nbsp;</p>
+			<h2><a name="alignment" class="md-header-anchor"></a><span>Alignment</span></h2>
+			<p><span>Under this rule, the boids will try to align their steering angle with the average steering angle
+					of
+					all the boids in their vicinity. Now, we see flocking behavior starting to form, however, it is not as
+					sophisticated as expected. </span></p>
+
+
+			<div id="sketch-holder-1">
+				<!-- Our sketch will go here! -->
+
+			</div>
+			<p>&nbsp;</p>
+
+
+
+
+		</div>
+
+	</section>
+
+
+
+
+	<section id="main" class="wrapper style1">
+		<div class="container 75%">
+
+
+			<header class="major">
+				<h2>Putting it all together</h2>
+				<p>Cohesion, Separation &amp;
+					Alignment in one simulation</p>
+			</header>
+
+
+
+
+
+			<p><span>In our final simulation, the boids will obey all three rules that we introduced above. The
+					individual
+					strength of compliance with each rule is exposed to you by sliders. That means that you can
+					dynamically
+					interact with the simulation and change the rules on the fly. In its initial state, all three rules
+					are
+					neglected by the boids.</span></p>
+
+
+
+			<div id="sketch-holder-4">
+				<!-- Our sketch will go here! -->
+
+			</div>
+			<p>&nbsp;</p>
+
+
+			<h3>Exercise</h3>
+			<blockquote>Try to find a combination of rules that will lead to emergent behavior such as what can be
+				observed from bird flocking behavior. Once you are happy with your attempt, have a look at a possible solution by clicking the button below.</blockquote>
+
+
+
+
+
+
+			<DIV CLASS="CodeString"><BUTTON ID="Show" STYLE="display:block"
+					ONCLICK="document.getElementById('Show').style.display='none'; document.getElementById('Hide').style.display='block'; document.getElementById('solution').style.display='block'">Show
+					possible solution</BUTTON>
+
+				<BUTTON ID="Hide" STYLE="display:none"
+					ONCLICK="document.getElementById('Show').style.display='block'; document.getElementById('Hide').style.display='none'; document.getElementById('solution').style.display='none'">Hide
+					possible solution</BUTTON>
+
+				<BR>
+
+				<DIV ID="solution" STYLE="display:none">Alignment: 75 %; Cohesion 55 %; Separation 90 %<p>	<p>In setting the sliders to appropriate levels, we see emergent behavior evolve that is
+					very similar to the murmuration of birds. As we can see, this murmuration happens although no boid knows acts as a leader or knows the entire system.
+				
+				
+				
+				
+				</p>
+				</DIV>
+			</DIV>
+
+
+
+		
+
+
+
+
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id="main" class="wrapper style2">
+		<div class="container 75%">
+
+
+
+
+
+
+			<h2>References</h2>
+
+
+
+			<ul>
+				<li><span>Reynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model. In
+					</span><em><span>Proceedings of the 14th annual conference on Computer graphics and interactive
+							techniques</span></em><span> (pp. 25-34).</span></li>
+				<li><span>Potts, W. K. (1984). The chorus-line hypothesis of manoeuvre coordination in avian flocks.
+					</span><em><span>Nature</span></em><span>, </span><em><span>309</span></em><span>(5966),
+						344-345.</span>
+				</li>
+				<li><span>Flake, G. W. (1998). </span><em><span>The computational beauty of nature: Computer
+							explorations of
+							fractals, chaos, complex systems, and adaptation</span></em><span>. MIT press.</span></li>
+				<li><span>Shiffman, Daniel (2018). </span><em><span>Coding Challenge #124: Flocking
+							Simulation</span></em><span>. (</span><a
+						href='https://thecodingtrain.com/CodingChallenges/124-flocking-boids' target='_blank'
+						class='url'>https://thecodingtrain.com/CodingChallenges/124-flocking-boids</a><span>)</span>
+				</li>
+				<li><span>Photo of swarm by </span><a href='[
+					James Wainscoat](https://unsplash.com/@tumbao1949)[@tumbao1949](https://unsplash.com/@tumbao1949)['><span>James
+							Wainscoat</span></a><span> on </span><a
+						href='https://unsplash.com/'><span>Unsplash</span></a><span>.</span></li>
+			</ul>
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+	</section>
+
+
+
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="copyright">
+				<li>&copy; <a href="https://patrickkastner.de">Patrick Kastner</a></li>
+				<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+				<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
